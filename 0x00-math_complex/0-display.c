@@ -17,7 +17,7 @@ void display_complex_number(complex c)
 	{
 		if (c.re)
 			printf(" %c ", sign);
-		printf("%g",c.im);
+		printf("%gi",c.im);
 	}
 	printf("\n");
 }
