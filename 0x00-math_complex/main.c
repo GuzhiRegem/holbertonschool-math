@@ -17,5 +17,11 @@ int main(void)
     c1.re = 1;
     c1.im = 0;
     display_complex_number(c1);
+    c1.re = 0;
+    c1.im = 1;
+    display_complex_number(c1);
+    c1.re = -1.8901;
+    c1.im = -4.900;
+    display_complex_number(c1);
     return (0);
 }

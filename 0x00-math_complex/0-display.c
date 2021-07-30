@@ -9,15 +9,21 @@
 void display_complex_number(complex c)
 {
 	char sign = '+';
+	double num;
+
+	num = c.im;
 	if (c.re)
 		printf("%g",c.re);
 	if (c.im < 0)
+	{
 		sign = '-';
-	if (c.im)
+		num *= -1;
+	}
+	if (num)
 	{
 		if (c.re)
 			printf(" %c ", sign);
-		printf("%gi ",c.im);
+		printf("%gi",num);
 	}
 	printf("\n");
 }
