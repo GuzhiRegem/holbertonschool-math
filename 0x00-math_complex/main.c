@@ -9,19 +9,14 @@
 
 int main(void)
 {
-    complex c1;
-
-    c1.re = 1;
-    c1.im = 2;
+    complex c1, c2, c3;
+    c1.re=1;
+    c1.im=1;
+    c2.re=1;
+    c2.im=2;
     display_complex_number(c1);
-    c1.re = 1;
-    c1.im = 0;
-    display_complex_number(c1);
-    c1.re = 0;
-    c1.im = 1;
-    display_complex_number(c1);
-    c1.re = -1.8901;
-    c1.im = -4.900;
-    display_complex_number(c1);
-    return (0);
+    display_complex_number(c2);
+    substraction(c1,c2,&c3);
+    display_complex_number(c3);
+	return (0);
 }

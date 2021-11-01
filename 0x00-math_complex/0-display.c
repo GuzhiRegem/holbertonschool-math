@@ -8,25 +8,13 @@
  */
 void display_complex_number(complex c)
 {
-	char sign = '+';
-	double num;
-
-	num = c.im;
-	if (c.re)
-		printf("%g",c.re);
-	if (c.im < 0)
+	printf("%f", c.re);
+	if (c.im)
 	{
-		sign = '-';
-		num *= -1;
-	}
-	if (num)
-	{
-		if (c.re)
-			printf(" %c ", sign);
-		if (num != 1)
-			printf("%gi",num);
+		if (c.im < 0)
+			printf(" - %fi", c.im);
 		else
-			printf("i");
+			printf(" + %fi", c.im);
 	}
 	printf("\n");
 }
