@@ -23,7 +23,10 @@ void display_complex_number(complex c)
 	{
 		if (c.re)
 			printf(" %c ", sign);
-		printf("%gi",num);
+		if (num != 1)
+			printf("%gi",num);
+		else
+			printf("i");
 	}
 	printf("\n");
 }
