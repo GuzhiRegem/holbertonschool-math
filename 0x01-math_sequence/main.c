@@ -1,29 +1,22 @@
 #include <stdio.h>
-#include "heron.h"
+#include "fibonacci.h"
 
-/**
- * main - check the code for Holberton School students.
- *
- * Return: Always 0.
- */
 void print_list(t_cell *head)
 {
     if (head == NULL)
-       return;
+        return;
     print_list(head->next);
-    printf("%Lf ",head->elt);
+    printf("%d ", head->elt);
 }
 
 int main()
 {
-    double p, u0;
     t_cell *head;
 
-    u0 = 1;
-    p = 35;
-    printf("The Heron sequence until having convergence with an error equal to 10^(-7) is:\n");
-    head = heron(p, u0);
-    print_list(head); 
+    head = Fibonnaci();
+    print_list(head);
     printf("\n");
+    if (head)
+        printf("The gold number is: %f\n", gold_number(head));
     return (0);
 }
