@@ -1,21 +1,6 @@
 #include "heron.h"
 
 /**
- * add_node - adds node to l_list
- * @head: head of list
- * @num: num of new obj
- * Return: void
- */
-void add_node(t_cell **head, double num)
-{
-	t_cell *new;
-
-	new = malloc(sizeof(t_cell));
-	new->next = *head;
-	new->elt = num;
-	*head = new;
-}
-/**
  * heron - sequence
  * @p: sqrt(p)
  * @x0: first num of iter
@@ -23,10 +8,19 @@ void add_node(t_cell **head, double num)
  */
 t_cell *heron(double p, double x0)
 {
-	double i;
-	t_cell *out = NULL;
+	t_cell *new, *head = malloc(sizeof(t_cell));
+	double val, err = 0.0000001;
 
-	for (i = x0; (i * i) != p; i = 0.5 * (i + (p / i)))
-		add_node(&out, i);
-	return (out);
+	head->elt = x0;
+	while (1)
+	{
+		val = 0.5*(head->elt + (p / head->elt));
+		if ((head->elt - err <= val) && (head->elt + err >= val))
+			break;
+		new = malloc(sizeof(t_cell));
+		new->elt = val;
+		new->next = head;
+		head = new;
+	}
+	return (head);
 }

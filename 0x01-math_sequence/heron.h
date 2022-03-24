@@ -6,7 +6,7 @@
 #include <math.h>
 
 typedef struct s_cell {
-	long double elt;
+	double elt;
 	struct s_cell *next;
 } t_cell;
 t_cell *heron(double p, double x0);
